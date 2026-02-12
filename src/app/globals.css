@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* ===== Design System Tokens ===== */
+@theme inline {
+  /* Background — true black base */
+  --color-black-primary: #000000;
+  --color-black-card: #0a0a0a;
+  --color-black-card-hover: #111111;
+  --color-black-surface: #161616;
+
+  /* Accent — cool slate-blue */
+  --color-accent: #6ee7b7;
+  --color-accent-dim: rgba(110, 231, 183, 0.15);
+  --color-accent-spotlight: rgba(110, 231, 183, 0.05);
+
+  /* Text */
+  --color-text-primary: #e4e4e7;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #52525b;
+
+  /* Borders */
+  --color-border-subtle: rgba(228, 228, 231, 0.08);
+  --color-border-hover: rgba(228, 228, 231, 0.2);
+
+  /* Font */
+  --font-sans: var(--font-inter);
+
+  /* Animations */
+  --animate-fade-up: fade-up 0.5s ease-out forwards;
+}
+
+/* ===== Keyframes ===== */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Base Styles ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-black-primary);
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-black-primary);
+  }
+}
+
+/* ===== Component Styles ===== */
+@layer components {
+
+  /* Nav indicator animation */
+  .nav-indicator {
+    height: 1px;
+    width: 2rem;
+    background-color: var(--color-text-muted);
+    transition: all 200ms ease;
+  }
+
+  .nav-link:hover .nav-indicator,
+  .nav-link.active .nav-indicator {
+    width: 4rem;
+    background-color: var(--color-text-primary);
+  }
+
+  .nav-link:hover .nav-label,
+  .nav-link.active .nav-label {
+    color: var(--color-text-primary);
+  }
+
+  /* Card hover with sibling dimming */
+  .card-list:hover .card-item {
+    opacity: 0.5;
+  }
+
+  .card-list .card-item:hover {
+    opacity: 1 !important;
+  }
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

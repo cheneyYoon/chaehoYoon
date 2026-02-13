@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import SpotlightCursor from "@/components/ui/SpotlightCursor";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,6 +13,19 @@ export const metadata: Metadata = {
   title: "Chaeho Yoon — Full-Stack Software Engineer",
   description:
     "Chaeho Yoon is a full-stack software engineer who builds scalable platforms and ships products used by millions.",
+  keywords: [
+    "Chaeho Yoon",
+    "software engineer",
+    "full-stack developer",
+    "React",
+    "TypeScript",
+    "Next.js",
+    "portfolio",
+  ],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Chaeho Yoon — Full-Stack Software Engineer",
     description:
@@ -35,7 +49,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} relative font-sans antialiased`}>
+        <SpotlightCursor />
         {children}
       </body>
     </html>

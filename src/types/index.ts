@@ -15,6 +15,7 @@ export interface Project {
     highlights: string[];
     technologies: string[];
     image?: string;
+    status?: "live" | "building";
 }
 
 export interface SkillCategory {
@@ -23,7 +24,21 @@ export interface SkillCategory {
     skills: string[];
 }
 
-export interface NavItem {
-    label: string;
-    href: string;
+export type FileIconType =
+    | "typescript"
+    | "react"
+    | "python"
+    | "json"
+    | "markdown"
+    | "shell";
+
+export interface FileEntry {
+    name: string;
+    icon: FileIconType;
+    sectionId: string;
+}
+
+export interface FolderEntry {
+    folder: string;
+    files: FileEntry[];
 }

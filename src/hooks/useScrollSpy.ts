@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 
 /**
  * Observes multiple sections and returns the ID of the one
- * currently most visible in the viewport.
+ * currently most visible in the scroll container.
+ * Uses #editor-content as the root if available (IDE layout),
+ * otherwise falls back to the viewport.
  */
 export function useScrollSpy(
     sectionIds: string[],
@@ -13,6 +15,8 @@ export function useScrollSpy(
     const [activeSection, setActiveSection] = useState<string>("");
 
     useEffect(() => {
+        const root = document.getElementById("editor-content") ?? null;
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -22,6 +26,7 @@ export function useScrollSpy(
                 });
             },
             {
+                root,
                 rootMargin: "-20% 0px -60% 0px",
                 threshold: 0,
                 ...options,

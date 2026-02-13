@@ -20,6 +20,7 @@ export const projects: Project[] = [
             "Redis",
         ],
         image: "/images/learnify.png",
+        status: "live",
     },
     {
         title: "CourtView",
@@ -38,5 +39,6 @@ export const projects: Project[] = [
             "Google Cloud",
         ],
         image: "/images/courtview.png",
+        status: "building",
     },
 ];

@@ -30,6 +30,8 @@ export default function FadeInSection({
             return;
         }
 
+        const root = document.getElementById("editor-content") ?? null;
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -38,7 +40,7 @@ export default function FadeInSection({
                     observer.unobserve(el);
                 }
             },
-            { threshold: 0.1 }
+            { root, threshold: 0.1 }
         );
 
         observer.observe(el);

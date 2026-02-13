@@ -19,7 +19,7 @@ export const projects: Project[] = [
             "MySQL",
             "Redis",
         ],
-        image: "/images/learnify.webp",
+        image: "/images/learnify.png",
     },
     {
         title: "CourtView",
@@ -37,6 +37,6 @@ export const projects: Project[] = [
             "Firebase",
             "Google Cloud",
         ],
-        image: "/images/courtview.webp",
+        image: "/images/courtview.png",
     },
 ];

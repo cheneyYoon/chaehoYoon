@@ -1,6 +1,6 @@
-# Chaeho Yoon — Portfolio V3
+# Chaeho Yoon — Portfolio
 
-A high-performance, interactive developer portfolio designed to mimic a modern VS Code environment. Built with the cutting-edge Next.js 16 and React 19 stack, featuring a fully functional terminal, syntax-highlighted aesthetics, and a responsive IDE layout.
+A high-performance, interactive developer portfolio designed to mimic a modern VS Code environment. Built with the cutting-edge Next.js 16 and React 19 stack, featuring a syntax-highlighted aesthetics and a responsive IDE layout.
 
 ## 🚀 Tech Stack
 

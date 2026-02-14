@@ -2,6 +2,7 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
     {
+        id: "learnify",
         title: "Learnify",
         subtitle: "learnify-bytes.com",
         url: "https://learnify-bytes.com",
@@ -23,6 +24,7 @@ export const projects: Project[] = [
         status: "live",
     },
     {
+        id: "courtview",
         title: "CourtView",
         subtitle: "Capstone Project",
         description:

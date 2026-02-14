@@ -2,6 +2,7 @@ import { Experience } from "@/types";
 
 export const experiences: Experience[] = [
     {
+        id: "bibliocommons",
         title: "Junior Fullstack Engineer I",
         company: "BiblioCommons, a Volaris Group Company",
         url: "https://www.bibliocommons.com",
@@ -22,6 +23,7 @@ export const experiences: Experience[] = [
         ],
     },
     {
+        id: "faco",
         title: "Software Developer Intern",
         company: "FACO",
         range: "Jun 2023 — Aug 2023",

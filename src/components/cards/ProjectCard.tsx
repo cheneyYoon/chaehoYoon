@@ -9,6 +9,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     const {
+        id,
         title,
         subtitle,
         url,
@@ -21,7 +22,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
     return (
         <div
-            className="group rounded-lg border p-5 transition-all hover:border-accent/20"
+            id={id}
+            className="group rounded-lg border p-5 transition-all hover:border-accent/20 scroll-mt-24"
             style={{
                 backgroundColor: "var(--color-ide-sidebar)",
                 borderColor: "var(--color-ide-border)",

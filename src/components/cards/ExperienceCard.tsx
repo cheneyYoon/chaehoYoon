@@ -10,10 +10,10 @@ export default function ExperienceCard({
     experience,
     isLatest = false,
 }: ExperienceCardProps) {
-    const { title, company, url, range, bullets, technologies } = experience;
+    const { id, title, company, url, range, bullets, technologies } = experience;
 
     return (
-        <div className="relative grid gap-4 pb-12 pl-8 sm:grid-cols-[140px_1fr] sm:gap-6 sm:pl-0">
+        <div id={id} className="relative grid gap-4 pb-12 pl-8 sm:grid-cols-[140px_1fr] sm:gap-8 sm:pl-0 scroll-mt-24">
             {/* Timeline dot */}
             <div
                 className="absolute left-0 top-1.5 h-3 w-3 rounded-full border-2 sm:left-[152px]"
@@ -67,7 +67,7 @@ export default function ExperienceCard({
 
                 <ul className="mt-3 space-y-2 text-sm leading-relaxed text-text-primary">
                     {bullets.map((bullet, i) => (
-                        <li key={i} className="flex gap-2">
+                        <li key={i} className="flex gap-4">
                             <span
                                 className="mt-2 h-1 w-1 shrink-0 rounded-full"
                                 style={{ backgroundColor: "var(--color-text-muted)" }}

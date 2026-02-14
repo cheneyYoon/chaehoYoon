@@ -104,7 +104,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         </ul>
                     )}
 
-                    <ul className="mt-3 flex flex-wrap" aria-label="Technologies used">
+                    <ul className="mt-3 flex flex-wrap list-none" aria-label="Technologies used">
                         {technologies.map((tech) => (
                             <TechPill key={tech} label={tech} />
                         ))}

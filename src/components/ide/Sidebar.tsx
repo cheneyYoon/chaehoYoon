@@ -71,7 +71,7 @@ export default function Sidebar({
                     style={{ borderColor: "var(--color-ide-border)" }}
                 >
                     <a
-                        href="https://github.com/chaehoyoon"
+                        href="https://github.com/cheneyYoon"
                         target="_blank"
                         rel="noreferrer noopener"
                         className="text-text-muted transition-colors hover:text-text-primary"

@@ -36,7 +36,7 @@ export default function Home() {
               Full-Stack Software Engineer
             </p>
 
-            <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_300px]">
+            <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_360px]">
               {/* About text */}
               <div className="space-y-4 text-base leading-relaxed text-text-primary">
                 <p>
@@ -51,7 +51,7 @@ export default function Home() {
                     20 million+ users
                   </span>
                   . My philosophy is rooted in clean architecture and technical
-                  precision — every line of code should earn its place.
+                  precision. Every line of code should earn its place.
                 </p>
               </div>
 

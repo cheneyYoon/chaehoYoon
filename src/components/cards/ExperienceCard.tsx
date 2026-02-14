@@ -16,7 +16,7 @@ export default function ExperienceCard({
         <div id={id} className="relative grid gap-4 pb-12 pl-8 sm:grid-cols-[140px_1fr] sm:gap-8 sm:pl-0 scroll-mt-24">
             {/* Timeline dot */}
             <div
-                className="absolute left-0 top-1.5 h-3 w-3 rounded-full border-2 sm:left-[152px]"
+                className="absolute left-0 top-1.5 h-3 w-3 rounded-full border-2 sm:left-[150px]"
                 style={{
                     borderColor: isLatest
                         ? "var(--color-accent)"

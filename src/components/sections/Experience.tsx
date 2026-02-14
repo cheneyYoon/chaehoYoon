@@ -7,7 +7,7 @@ export default function Experience() {
             {/* Timeline line */}
             <div className="relative">
                 <div
-                    className="absolute bottom-0 left-[5px] top-0 w-px sm:left-[157px]"
+                    className="absolute bottom-0 left-[5px] top-0 w-0.5 sm:left-[155px]"
                     style={{ backgroundColor: "var(--color-ide-border)" }}
                     aria-hidden="true"
                 />
@@ -21,15 +21,15 @@ export default function Experience() {
             </div>
 
             {/* Resume link */}
-            <div className="mt-4 pl-8 sm:pl-0 sm:ml-[164px]">
+            <div className="mt-4 pl-8 sm:pl-0 sm:ml-[172px]">
                 <a
                     className="group inline-flex items-center gap-1 font-mono text-sm text-accent transition-colors hover:text-text-bright"
                     href="/resume.pdf"
                     target="_blank"
                     rel="noreferrer noopener"
-                    aria-label="View Full Résumé (opens in a new tab)"
+                    aria-label="View Full Resume (opens in a new tab)"
                 >
-                    View Full Résumé
+                    View Full Resume
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"

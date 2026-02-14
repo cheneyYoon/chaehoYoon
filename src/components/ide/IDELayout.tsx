@@ -12,7 +12,7 @@ interface IDELayoutProps {
     children: React.ReactNode;
 }
 
-const sectionIds = ["readme", "bibliocommons", "faco", "learnify", "courtview", "skills", "contact"];
+const sectionIds = ["readme", "experience", "projects", "skills"];
 
 export default function IDELayout({ children }: IDELayoutProps) {
     const router = useRouter();

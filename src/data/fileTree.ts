@@ -5,8 +5,8 @@ export const fileTree: FolderEntry[] = [
         folder: "PORTFOLIO_MAIN",
         files: [
             { name: "README.md", icon: "markdown", sectionId: "readme" },
-            { name: "bibliocommons.tsx", icon: "react", sectionId: "bibliocommons" },
-            { name: "faco.ts", icon: "typescript", sectionId: "faco" },
+            { name: "experiences.tsx", icon: "react", sectionId: "experience" },
+            { name: "projects.ts", icon: "typescript", sectionId: "projects" },
             { name: "skills.json", icon: "json", sectionId: "skills" },
         ],
     },

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FileItem from "./FileItem";
 import { FolderEntry } from "@/types";
 
@@ -19,15 +19,22 @@ export default function FolderGroup({
         (f) => f.sectionId === activeSection
     );
 
-    const [isManuallyCollapsed, setIsManuallyCollapsed] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(true);
 
-    // Always show folder contents if it has the active child,
-    // regardless of manual collapse state
-    const isOpen = hasActiveChild || !isManuallyCollapsed;
+    // Auto-expand if active child exists, but only when it changes state
+    // We use a useEffect to sync, but allow manual toggle override
+    useEffect(() => {
+        if (hasActiveChild) {
+            // eslint-disable-next-line
+            setIsExpanded(true);
+        }
+    }, [hasActiveChild]);
 
     const handleToggle = () => {
-        setIsManuallyCollapsed((prev) => !prev);
+        setIsExpanded((prev) => !prev);
     };
+
+    const isOpen = isExpanded;
 
     return (
         <div className="mb-1" role="treeitem" aria-expanded={isOpen} aria-selected="false">

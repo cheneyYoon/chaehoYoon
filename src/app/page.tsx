@@ -17,7 +17,7 @@ const stackItems = [
 export default function Home() {
   return (
     <IDELayout>
-      <div className="mx-auto max-w-4xl px-6 py-12 md:px-12 lg:px-16">
+      <div className="mx-auto max-w-[85%] px-6 py-12 md:px-12 lg:px-16 xl:max-w-7xl">
         {/* ── README.md — Hero + About ── */}
         <FadeInSection>
           <section id="readme" className="mb-24 scroll-mt-4" aria-label="About me">
@@ -97,73 +97,7 @@ export default function Home() {
           </section>
         </FadeInSection>
 
-        {/* ── connect.sh — Contact ── */}
-        <FadeInSection delay={100}>
-          <section
-            id="contact"
-            className="mb-12 scroll-mt-4"
-            aria-label="Contact"
-          >
-            <SectionDivider title="Contact" />
-            <div
-              className="rounded-lg border p-6 font-mono text-sm"
-              style={{
-                backgroundColor: "var(--color-ide-sidebar)",
-                borderColor: "var(--color-ide-border)",
-              }}
-            >
-              <p className="text-syntax-green">#!/bin/bash</p>
-              <p className="mt-1 text-syntax-green">
-                # Let&apos;s connect — I&apos;m always open to new opportunities
-              </p>
-              <div className="mt-5 space-y-3">
-                <p>
-                  <span className="text-syntax-purple">export</span>{" "}
-                  <span className="text-syntax-blue">EMAIL</span>
-                  <span className="text-text-primary">=</span>
-                  <a
-                    href="mailto:chaeho.yoon@outlook.com"
-                    className="text-syntax-orange underline decoration-syntax-orange/30 transition-colors hover:decoration-syntax-orange"
-                  >
-                    &quot;chaeho.yoon@outlook.com&quot;
-                  </a>
-                </p>
-                <p>
-                  <span className="text-syntax-purple">export</span>{" "}
-                  <span className="text-syntax-blue">GITHUB</span>
-                  <span className="text-text-primary">=</span>
-                  <a
-                    href="https://github.com/chaehoyoon"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="text-syntax-orange underline decoration-syntax-orange/30 transition-colors hover:decoration-syntax-orange"
-                  >
-                    &quot;github.com/chaehoyoon&quot;
-                  </a>
-                </p>
-                <p>
-                  <span className="text-syntax-purple">export</span>{" "}
-                  <span className="text-syntax-blue">LINKEDIN</span>
-                  <span className="text-text-primary">=</span>
-                  <a
-                    href="https://linkedin.com/in/chaehoyoon"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="text-syntax-orange underline decoration-syntax-orange/30 transition-colors hover:decoration-syntax-orange"
-                  >
-                    &quot;linkedin.com/in/chaehoyoon&quot;
-                  </a>
-                </p>
-                <p className="mt-4 pt-2" style={{ borderTop: "1px solid var(--color-ide-border)" }}>
-                  <span className="text-syntax-yellow">echo</span>{" "}
-                  <span className="text-syntax-orange">
-                    &quot;Thanks for visiting! ✌️&quot;
-                  </span>
-                </p>
-              </div>
-            </div>
-          </section>
-        </FadeInSection>
+
 
         {/* Footer */}
         <footer

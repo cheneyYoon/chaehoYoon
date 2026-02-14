@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import TitleBar from "./TitleBar";
 import TabBar from "./TabBar";
 import Sidebar from "./Sidebar";
@@ -11,10 +12,18 @@ interface IDELayoutProps {
     children: React.ReactNode;
 }
 
-const sectionIds = ["readme", "skills", "experience", "projects", "contact"];
+const sectionIds = ["readme", "bibliocommons", "faco", "learnify", "courtview", "skills", "contact"];
 
 export default function IDELayout({ children }: IDELayoutProps) {
-    const activeSection = useScrollSpy(sectionIds);
+    const router = useRouter();
+    const pathname = usePathname();
+    const scrollSpySection = useScrollSpy(sectionIds);
+
+    // If on home page, use scroll spy. If on project page, use pathname slug.
+    const activeSection = pathname === "/"
+        ? scrollSpySection
+        : pathname?.split("/").pop() || "";
+
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [scrollPercent, setScrollPercent] = useState(0);
 
@@ -35,12 +44,29 @@ export default function IDELayout({ children }: IDELayoutProps) {
         return () => editorEl?.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const handleFileClick = useCallback((sectionId: string) => {
+    const handleFileClick = useCallback((sectionId: string, path?: string) => {
+        if (path) {
+            router.push(path);
+            if (window.innerWidth < 1024) setSidebarOpen(false); // Close sidebar on mobile nav
+            return;
+        }
+
+        // If we are not on home page, and trying to scroll to home section
+        // We need to navigate to home first with a hash
+        // But for now, we assume single page scrolling is primary use case until V3 phases are done
+        // Actually, if we are on a project page, and click "readme", we should go to "/" + hash
+        // Let's handle that:
+        if (window.location.pathname !== "/") {
+            router.push(`/#${sectionId}`);
+            return;
+        }
+
         const el = document.getElementById(sectionId);
         if (el) {
             el.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-    }, []);
+        if (window.innerWidth < 1024) setSidebarOpen(false);
+    }, [router]);
 
     return (
         <div className="flex h-screen w-full flex-col overflow-hidden lg:p-3">

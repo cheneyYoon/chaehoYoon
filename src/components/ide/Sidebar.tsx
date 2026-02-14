@@ -5,7 +5,7 @@ import { fileTree } from "@/data/fileTree";
 
 interface SidebarProps {
     activeSection: string;
-    onFileClick: (sectionId: string) => void;
+    onFileClick: (sectionId: string, path?: string) => void;
     isOpen: boolean;
     onClose: () => void;
 }
@@ -16,8 +16,8 @@ export default function Sidebar({
     isOpen,
     onClose,
 }: SidebarProps) {
-    const handleFileClick = (sectionId: string) => {
-        onFileClick(sectionId);
+    const handleFileClick = (sectionId: string, path?: string) => {
+        onFileClick(sectionId, path);
         onClose();
     };
 

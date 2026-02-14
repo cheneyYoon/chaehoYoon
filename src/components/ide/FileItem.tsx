@@ -6,13 +6,13 @@ import { FileEntry } from "@/types";
 interface FileItemProps {
     file: FileEntry;
     isActive: boolean;
-    onClick: (sectionId: string) => void;
+    onClick: (sectionId: string, path?: string) => void;
 }
 
 export default function FileItem({ file, isActive, onClick }: FileItemProps) {
     return (
         <button
-            onClick={() => onClick(file.sectionId)}
+            onClick={() => onClick(file.sectionId, file.path)}
             role="treeitem"
             className={`relative flex w-full items-center gap-2 rounded-sm px-4 py-[3px] text-left font-mono text-[13px] transition-all ${isActive
                 ? "bg-ide-active text-text-bright"

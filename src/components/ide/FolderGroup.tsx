@@ -7,7 +7,7 @@ import { FolderEntry } from "@/types";
 interface FolderGroupProps {
     folder: FolderEntry;
     activeSection: string;
-    onFileClick: (sectionId: string) => void;
+    onFileClick: (sectionId: string, path?: string) => void;
 }
 
 export default function FolderGroup({

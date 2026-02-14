@@ -1,4 +1,5 @@
 export interface Experience {
+    id: string;
     title: string;
     company: string;
     url?: string;
@@ -8,6 +9,7 @@ export interface Experience {
 }
 
 export interface Project {
+    id: string;
     title: string;
     subtitle?: string;
     url?: string;
@@ -16,6 +18,16 @@ export interface Project {
     technologies: string[];
     image?: string;
     status?: "live" | "building";
+}
+
+export interface ProjectDetail {
+    id: string;
+    challenge: string;
+    solution: string;
+    techDeepDive: {
+        title: string;
+        content: string;
+    }[];
 }
 
 export interface SkillCategory {
@@ -36,6 +48,7 @@ export interface FileEntry {
     name: string;
     icon: FileIconType;
     sectionId: string;
+    path?: string; // If present, navigates to new route instead of scrolling
 }
 
 export interface FolderEntry {

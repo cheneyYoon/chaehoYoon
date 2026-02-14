@@ -6,7 +6,7 @@ import { FileEntry } from "@/types";
 
 interface TabBarProps {
     activeSection: string;
-    onTabClick: (sectionId: string) => void;
+    onTabClick: (sectionId: string, path?: string) => void;
 }
 
 // Flatten file tree into a list of all files for tabs
@@ -28,7 +28,7 @@ export default function TabBar({ activeSection, onTabClick }: TabBarProps) {
                 return (
                     <button
                         key={file.name}
-                        onClick={() => onTabClick(file.sectionId)}
+                        onClick={() => onTabClick(file.sectionId, file.path)}
                         role="tab"
                         aria-selected={isActive}
                         className={`group flex shrink-0 items-center gap-1.5 border-r px-3 font-mono text-[12px] transition-colors ${isActive

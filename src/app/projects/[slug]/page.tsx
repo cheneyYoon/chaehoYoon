@@ -52,11 +52,11 @@ export default async function ProjectPage({
                         )}
                     </div>
 
-                    <div className="mt-6 flex flex-wrap gap-2">
+                    <ul className="mt-6 flex flex-wrap gap-2 list-none">
                         {project.technologies.map((tech) => (
                             <TechPill key={tech} label={tech} />
                         ))}
-                    </div>
+                    </ul>
                 </header>
 
                 {/* Challenge & Solution */}
